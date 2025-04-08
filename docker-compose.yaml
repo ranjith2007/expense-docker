@@ -2,13 +2,13 @@ version: "3"
 networks:
   expense:
 volumes:
-  mysql-data: #docker volume create mysql
+  mysql: #docker volume create mysql
 services:
   mysql:
     image: ranjithkumar0799/mysql:v1 
     container_name: mysql # --name mysql
     volumes:
-    - mysql: /var/lib/mysql # -v mysql:/var/lib/mysql
+    - mysql:/var/lib/mysql # -v mysql:/var/lib/mysql
   backend:
     image: ranjithkumar0799/backend:v1
     container_name: backend
